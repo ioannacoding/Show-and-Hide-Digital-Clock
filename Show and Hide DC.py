@@ -6,16 +6,19 @@ from time import strftime
 win=Tk()
 win.title('digital clock')
 
+win.iconbitmap('clock.ico')
+
+#Define function to hide the widget    
+def hide_widget(kouti):
+   kouti.pack_forget()
+
+
 #This method counttime gives the format of the label and it
 #refreshes the label every one thousand mile-seconds
 def counttime():
     string=strftime('%H:%M:%S %p')
     Lemoni.config(text=string)
     Lemoni.after(1000,counttime)
-
-#Define function to hide the widget    
-def hide_widget(kouti):
-   kouti.pack_forget()
 
 #Define a function to show the widget
 def show_widget(kouti):
